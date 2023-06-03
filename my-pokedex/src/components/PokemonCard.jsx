@@ -1,11 +1,20 @@
 import React from 'react';
 
-function PokemonCard() {
+function PokemonCard(props) {
+  console.log(props); // Affiche les props dans la console du navigateur
+  const pokemon = pokemonList[0];
+
   return (
-    <figure>
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="" />
-      <figcaption>bulbasaur</figcaption>
-    </figure>
+    <div className="PokemonCard">
+      <figure>
+        {pokemon.imgSrc ? (
+          <img src={pokemon.imgSrc} alt={pokemon.name} />
+        ) : (
+          <p>???</p>
+        )}
+        <figcaption>{pokemon.name}</figcaption>
+      </figure>
+    </div>
   );
 }
 
