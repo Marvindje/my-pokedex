@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
 function PokemonCard(props) {
-  console.log(props);
   const { pokemon } = props;
 
   return (
-    <div className="PokemonCard">
+    <motion.div className="PokemonCard"
+      whileHover={{ scale: 1.1 }}
+      transition={{ duration: 0.5 }}
+    >
       <figure>
         {pokemon.imgSrc ? (
           <img src={pokemon.imgSrc} alt={pokemon.name} />
@@ -15,7 +18,7 @@ function PokemonCard(props) {
         )}
         <figcaption>{pokemon.name}</figcaption>
       </figure>
-    </div>
+    </motion.div>
   );
 }
 
