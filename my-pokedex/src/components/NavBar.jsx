@@ -1,12 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 function NavBar(props) {
-  useEffect(() => {
-    if (props.selectedPokemon === 'pikachu') {
-      alert("pika pikachu !!!");
-    }
-  }, [props.selectedPokemon]);
-
   return (
     <div className="NavBar">
       {props.onPreviousClick && (

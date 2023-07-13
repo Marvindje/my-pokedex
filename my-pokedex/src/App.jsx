@@ -1,30 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import PokemonCard from './components/PokemonCard';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const pokemonList = [
   {
-    name: "bulbasaur",
+    name: "bulbisare",
     imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+      "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
   },
   {
-    name: "charmander",
+    name: "salamèche",
     imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+      "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
   },
   {
-    name: "squirtle",
+    name: "carapuce",
     imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+      "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
   },
   {
     name: "pikachu",
     imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+      "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
   },
   {
     name: "mew",
+    imgSrc:
+      "https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png",
   },
 ];
 
@@ -32,12 +36,28 @@ function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
   useEffect(() => {
-    alert("hello pokemon trainer :)");
+    toast.success("hello pokemon trainer :)", {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   }, []);
 
   useEffect(() => {
     if (pokemonList[pokemonIndex].name === 'pikachu') {
-      alert("pika pikachu !!!");
+      toast.warn("pika pikachu !!!", {
+        position: toast.POSITION.BOTTOM_CENTER,
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   }, [pokemonIndex]);
 
@@ -60,6 +80,17 @@ function App() {
         onNextClick={handleNextClick}
       />
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+      <ToastContainer 
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }

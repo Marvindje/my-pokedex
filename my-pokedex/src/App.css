@@ -1,42 +1,44 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
+  font-family: 'Lilita One', cursive;
   text-align: center;
+  background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.NavBar {
+  margin-bottom: 2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.NavBar button {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background: #61dafb;
+  color: white;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.PokemonCard {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  padding: 2rem;
+  color: black;
 }
 
-.card {
-  padding: 2em;
+.PokemonCard img {
+  width: 100%;
+  max-width: 300px;
 }
 
-.read-the-docs {
-  color: #888;
+.PokemonCard figcaption {
+  margin-top: 1rem;
+  text-transform: capitalize;
+  font-size: 2rem;
 }
